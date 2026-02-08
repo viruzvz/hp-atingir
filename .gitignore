@@ -1,0 +1,13 @@
+.vscode
+.idea
+
+.envrc
+.parcel-cache
+node_modules
+
+dist
+build
+
+*.pid
+*.log
+*.env
