@@ -1,0 +1,48 @@
+.header {
+  position: relative;
+  z-index: 1;
+  .h-top {
+    background-color: $t-primary;
+    padding: 5px 15px;
+    color: #fff;
+    text-align: right;
+    font-size: $t-small;
+  }
+}
+.nav-primary {
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6);
+  // min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .section {
+    display: flex;
+    // justify-content: center;
+    // align-content: center;
+    align-items: center;
+  }
+  // 40% (navbar)
+  .section--nav {
+
+  }
+
+  // 20% (logo)
+  .section--logo {
+    position: relative;
+    justify-content: center;
+    .logo {
+      position: absolute;
+      top: 0;
+      // margin-top: -20px;
+    }
+  }
+
+  // 40% (redes)
+  .section--social {
+    justify-content: end;
+  }
+
+
+}

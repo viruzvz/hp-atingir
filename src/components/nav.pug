@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand-lg
+  .container-fluid
+    //- a.navbar-brand(href='#') Navbar
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav(id="navigation")
+        each item in ['index', 'about']
+          li.nav-item
+            a.nav-link.active(href="/" + item)=item

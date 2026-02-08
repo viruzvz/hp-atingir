@@ -1,0 +1,24 @@
+.hero {
+  padding-top: 120px;
+  background-image: url('../assets/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  .btn-contacts {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.subtract {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  img {
+    margin-top: -30px;
+  }
+}
