@@ -1,7 +1,60 @@
 extends /layouts/template.pug
 block main
-  include ../pages/header.pug
-  include ../components/hero.pug
+  .h-top.d-none.d-lg-block
+    .container
+      .col-12
+        i.fa-regular.fa-clock &nbsp;
+        | SEG A SEX DE 07H ÁS 19H - SÁB 09H ÁS 17H
+  header.header
+    .nav-primary
+      .container
+        .section.section--nav
+          include /components/nav.pug
+        .section.section--logo
+          a.logo(href="#" title="Atingir Sociologia e Fonologia")
+            img(src="src/assets/logo-primary.svg" alt="Logo Atingir")
+        .section.section--social
+          a.link.link-primary.phone(href="#" title="Whatsapp" target="_blank")
+            i.fa-brands.fa-whatsapp &nbsp;
+            | (61) 98230-1562
+          include /components/social.pug
+  section.hero
+    .subtract
+      img.lazyload(data-src="src/assets/subtract.png", alt="Bg logo")
+    .container 
+      .row 
+        .col-lg-8.col-sm-12
+          p
+            span.me-3
+              i.fa-solid.fa-circle-check.me-3
+              | Clínica ATINGIR 
+            span
+              i.fa-solid.fa-heart.me-3
+              | Psicologia . Psicomotricidade . Fonoaudiologia
+          h1 Psicologia com acolhimento, ciência e propósito
+          h2 Integramos psicomotricidade e fonoaudiologia como pilares de cuidado, potencializando comunicação, corpo, e emoção no dia a dia.
+          ul.list-group
+            li 
+              i.fa-solid.fa-circle-check.me-3
+              | Psicomotricidade: corpo que organiza
+            li 
+              i.fa-solid.fa-circle-check.me-3
+              | Fonoaudiologia: voz que se fortalece
+            li 
+              i.fa-solid.fa-circle-check.me-3
+              | Psicologia: mente que encontra sentido
+          p Atendimento humanizado . Sessões presenciais e/ou online . Plano Terapéutico individual.
+        .col-lg-4.d-none.d-lg-block
+          figure.figure
+            img.figure-img.img-fluid.lazyload(src="src/assets/hero-atingir-image.png", alt="Máscara da psicologia")
+      .row 
+        .col-12.btn-contacts
+          a.btn.btn-primary.me-3(href="#" title="Whatsapp")
+            i.fa-brands.fa-whatsapp.me-3
+            | Agendar avaliação
+          a.btn.btn-secondary(href="#" title="Serviços")
+            i.fa-solid.fa-circle-check.me-3
+            | Ver serviços
   section.section.section--page.reveal.sobre#sobre 
     .container
       .row 
