@@ -1,3 +1,8 @@
 @import "./buttons.scss";
+@import "./gallery.scss";
 @import "./header.scss";
 @import "./hero.scss";
+@import "./link.scss";
+@import "./paralax.scss";
+@import "./title.scss";
+@import "./wrapper-cookie.scss";

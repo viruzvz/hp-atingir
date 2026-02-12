@@ -1,10 +1,23 @@
 nav.navbar.navbar-expand-lg
-  .container-fluid
-    //- a.navbar-brand(href='#') Navbar
-    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarNav.collapse.navbar-collapse
-      ul.navbar-nav(id="navigation")
-        each item in ['index', 'about']
-          li.nav-item
-            a.nav-link.active(href="/" + item)=item
+
+  a.navbar-brand(href='#' title="Logo Atingir")  
+    img(src="src/assets/logo-atingir-horizontal.svg", alt="Logo Atingir", width="150")
+  button.navbar-toggler.custom-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+    span.bar
+    span.bar
+    span.bar
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav#navigation
+      li.nav-item
+        a.nav-link.active(href="#") Home
+      li.nav-item
+        a.nav-link(href="#sobre" data-section="sobre") Sobre
+      li.nav-item
+        a.nav-link(href="#servicos" data-section="servicos") Serviços
+      li.nav-item
+        a.nav-link(href="#psicologos" data-section="psicologos") Psicólogos
+      li.nav-item
+        a.nav-link(href="#contatos" data-section="contatos") Contatos
+
+      li.nav-item.d-block.d-lg-none
+        p Lorem ipsum, dolor sit amet

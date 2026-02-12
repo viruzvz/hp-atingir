@@ -1,31 +1,212 @@
 extends /layouts/template.pug
 block main
-  .container
-    h1.mb-5 Welcome to Vite Starter for Web designers.
-    p.alert.alert-success 
-      i.fa-solid.fa-triangle-exclamation 
-      | &nbsp; <b>Bootstrap</b>, <b>Pugjs</b> and <b>Font-awesome</b>.
-    .row 
-      .col-4.text-start
-        img(src="/src/assets/Bootstrap_logo.svg", alt="bootstrap 5", width="100px")
-      .col-4.text-center
-        img(src="/src/assets/pug.svg", alt="Pugjs", width="100px")
-      .col-4.text-end
-        img(src="/src/assets/fontawesome-1.svg", alt="Font awesome 6", width="100px")
-      .col-12.text-center.p-4 
-        // Button trigger modal
-        button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal')
-          i.fa-solid.fa-eye
-          | &nbsp; Check components
-        // Modal
-        #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
-          .modal-dialog
+  section.section.section--page.reveal.sobre#sobre 
+    .container
+      .row 
+        .col-md-6.col-sm-12
+          .card.border-light.mb-3.shadow-sm
+            .card-header Sobre a ATINGIR
+            .card-body
+              //- h5.card-title Light card title
+              p.card-text
+                | <b>Há 25 anos, a ATINGIR é referência em cuidado psicológico.</b> Com uma atuação integrada, unimos psicologia, psicomotricidade e fonoaudiologia para promover desenvolvimento, equilíbrio emocional e comunicação em todas as fases da vida. Nossa história é construída com ética, acolhimento e compromisso com resultados reais.
+            .footer
+              figure 
+                img.lazyload(data-src="src/assets/logo-small.svg", alt="Logo Atingir")
+        .col-md-6.col-sm-12
+          .card.border-light.mb-3.shadow-sm
+            .card-header Como Trabalhamos
+            .card-body
+              //- h5.card-title Light card title
+
+              ul
+                li
+                  span 1
+                  | Triagem e direcionamento
+                li
+                  span 2
+                  | Plano terapéutico
+                li
+                  span 3
+                  | Evolução e reavaliação
+            .footer
+              figure 
+                img.lazyload(data-src="src/assets/logo-small.svg", alt="Logo Atingir")
+  section.section.section--page.reveal.servicos#servicos
+    .container 
+      .row
+        .col-12
+          h2.section-title
+            span Serviços
+      .row
+        .col-xl-3.col-md-6.col-sm-12
+          .card.set-1
+            h5.card-header Psicologia Clínica
+            .card-body
+              p.card-text Cuidado emocional com escuta qualificada e abordagem humanizada. Promovemos equilíbrio, autoconhecimento e fortalecimento psicológico.
+        .col-xl-3.col-md-6.col-sm-12
+          .card.set-2
+            h5.card-header Psicomotricidade
+            .card-body
+              p.card-text Integra corpo e mente no desenvolvimento infantil e adulto. Estimula coordenação, percepção e organização do movimento.
+        .col-xl-3.col-md-6.col-sm-12
+          .card.set-3
+            h5.card-header Fonoaudiologia
+            .card-body
+              p.card-text Avaliação e intervenção nas áreas da fala, linguagem e comunicação. Cuidamos da expressão e do desenvolvimento comunicativo.
+        .col-xl-3.col-md-6.col-sm-12
+          .card.set-4
+            h5.card-header Orientação Parental
+            .card-body
+              p.card-text Acolhimento e direcionamento para desafios da educação dos filhos. Fortalecemos vínculos e estratégias familiares saudáveis.
+  section.section.section--page.psicologos#psicologos 
+    .container 
+      .row 
+        .col-12 
+          h2.section-title 
+            span Psicólogos 
+      .row 
+        .col-md-4 
+          .card.mb-3
+            img.card-img-top.lazyload(data-src='src/assets/psicologo1.jpg' alt='Fulando de tal')
+            .card-body
+              h5.card-title Dr Carlos Ivam
+              p.card-text
+                | CRP 00/0000
+              p.card-text
+                a.btn.btn-secondary.w-100.open-modal(data-bs-toggle="modal" data-bs-target="#cardModal" data-nome="Dr Carlos Ivam" data-foto="src/assets/psicologo1.jpg" data-curriculo="Ab Cd Ed Ef" title="Currículo")
+                  i.fa-solid.fa-circle-info &nbsp;
+                  | Currículo
+        .col-md-4 
+          .card.mb-3
+            img.card-img-top.lazyload(data-src='src/assets/psicologo2.jpg' alt='Fulando de tal')
+            .card-body
+              h5.card-title Dra Bruna Flávia
+              p.card-text
+                | CRP 00/0000
+              p.card-text
+                a.btn.btn-secondary.w-100(data-bs-toggle="modal" data-bs-target="#cardModal" data-nome="Dra Bruna Flávia" data-foto="src/assets/psicologo2.jpg" data-curriculo="Ab Cd Ed Ef" title="Currículo")
+                  i.fa-solid.fa-circle-info &nbsp;
+                  | Currículo
+        .col-md-4 
+          .card.mb-3
+            img.card-img-top.lazyload(data-src='src/assets/psicologo3.jpg' alt='Fulando de tal')
+            .card-body
+              h5.card-title Dra Ivana Boas
+              p.card-text
+                | CRP 00/0000
+              p.card-text
+                a.btn.btn-secondary.w-100(data-bs-toggle="modal" data-bs-target="#cardModal" data-nome="Dra Ivana Boas" data-foto="src/assets/psicologo3.jpg" data-curriculo="Ab Cd Ed Ef" title="Currículo")
+                  i.fa-solid.fa-circle-info &nbsp;
+                  | Currículo
+
+        .modal.fade#cardModal(tabindex="-1" aria-hidden="true")
+          .modal-dialog.modal-dialog-centered
             .modal-content
               .modal-header
-                h1#exampleModalLabel.modal-title.fs-5 Modal title
-                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
-              .modal-body
-                | ...
-              .modal-footer
-                button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
-                button.btn.btn-primary(type='button') Save changes
+                h5.modal-title Perfil Profissional
+                button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+
+              .modal-body.text-center
+                img#modalFoto.mb-3(src="" alt="")
+                h4#modalNome.mb-3
+                p#modalCurriculo.text-muted
+
+
+
+
+  section.galeria#galeria 
+    .container 
+      .row 
+        .col-12 
+          h2.section-title 
+            span Galeria
+      #gallery.row.g-3.mb-3
+        // ITEM
+        .col-6.col-md-4.col-lg-3
+          button.btn.p-0.border-0.w-100.gallery-item(data-index='0' data-src='https://picsum.photos/id/1011/1600/900' data-title='Imagem 01' data-bs-toggle='modal' data-bs-target='#galleryModal')
+            img.img-fluid.rounded.shadow-sm.w-100.lazyload(src='https://picsum.photos/id/1011/600/450')
+        .col-6.col-md-4.col-lg-3
+          button.btn.p-0.border-0.w-100.gallery-item(data-index='1' data-src='https://picsum.photos/id/1015/1600/900' data-title='Imagem 02' data-bs-toggle='modal' data-bs-target='#galleryModal')
+            img.img-fluid.rounded.shadow-sm.w-100.lazyload(src='https://picsum.photos/id/1015/600/450')
+        .col-6.col-md-4.col-lg-3
+          button.btn.p-0.border-0.w-100.gallery-item(data-index='2' data-src='https://picsum.photos/id/1025/1600/900' data-title='Imagem 03' data-bs-toggle='modal' data-bs-target='#galleryModal')
+            img.img-fluid.rounded.shadow-sm.w-100.lazyload(src='https://picsum.photos/id/1025/600/450')
+        .col-6.col-md-4.col-lg-3
+          button.btn.p-0.border-0.w-100.gallery-item(data-index='3' data-src='https://picsum.photos/id/1035/1600/900' data-title='Imagem 04' data-bs-toggle='modal' data-bs-target='#galleryModal')
+            img.img-fluid.rounded.shadow-sm.w-100.lazyload(src='https://picsum.photos/id/1035/600/450')
+      .row 
+        .col-12.text-center
+          a.btn.btn-secondary(href="#" title="Serviços")
+            i.fa-brands.fa-instagram &nbsp;
+            | Instagram
+      #galleryModal.modal.fade(tabindex='-1')
+        .modal-dialog.modal-dialog-centered.modal-xl
+          .modal-content
+            .modal-header
+              h2#modalTitle.modal-title.h6
+              button.btn-close(data-bs-dismiss='modal')
+            .modal-body.position-relative.p-0
+              img#modalImage.img-fluid.w-100
+              // BOTÕES
+              button#prevBtn.btn.btn-dark.position-absolute.top-50.start-0.translate-middle-y.ms-2
+                | &lsaquo;
+              button#nextBtn.btn.btn-dark.position-absolute.top-50.end-0.translate-middle-y.me-2
+                | &rsaquo;
+            .modal-footer.justify-content-between
+              small#modalCounter.text-muted
+              button.btn.btn-secondary.btn-sm(data-bs-dismiss='modal') Fechar
+  section.section.section--page.reveal.paralax.paralax-style
+    .paralax-content
+      .container
+        .paralax-caption.d-flex.justify-content-center
+          img.lazyload(data-src="src/assets/logo-secondary.svg", alt="Atingir Psicologia e Fonoaudiologia")
+  footer 
+    section.section.section--page.contacts#contatos.p-0
+      section.map.p-0
+        iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3838.640762742687!2d-48.0614452!3d-15.8228851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3347b012cf2b%3A0x9bbf676f5f9ea359!2sClinica%20Atingir!5e0!3m2!1spt-BR!2sbr!4v1770602137258!5m2!1spt-BR!2sbr' width='100%' height='400' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+        iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3838.640762742687!2d-48.0614452!3d-15.8228851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3347b012cf2b%3A0x9bbf676f5f9ea359!2sClinica%20Atingir!5e0!3m2!1spt-BR!2sbr!4v1770602137258!5m2!1spt-BR!2sbr' width='100%' height='400' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+      .container 
+        .row 
+          .col-12 
+            .d-flex.justify-content-center.flex-column.align-items-center.py-4.text-center
+              .py-3
+                img.lazyload(data-src="src/assets/logo-secondary.svg" alt="Atingir Psicologia e Fonoaudiologia" width="140" heigh="178.75")
+              .pt-3 
+                p: a.link.link-secondary(href="mailto:contatos@atingirpsicofono.com.br" title="contatos@atingirpsicofono.com.br")
+                  span.fa-solid.fa-envelope 
+                  |  contatos@atingirpsicofono.com.br
+                p: a.link.link-secondary(href="tel:61999330061" title="Telefone empresa")
+                  span.fa-solid.fa-phone 
+                  |  61 99933-0061 |  61 99933-0061 
+                p: a.link.link-secondary(href="#" title="Localização")
+                  span.fa-solid.fa-location-dot
+                  |  Rua do Caic - São Sebastião Residencial Oeste - São Sebastião, Brasília - DF, 71691-152
+                p: a.link.link-secondary(href="#" title="Localização")
+                  span.fa-solid.fa-location-dot
+                  |  Rua do Caic - São Sebastião Residencial Oeste - São Sebastião, Brasília - DF, 71691-152
+            .py-3.text-xl.border-top.mb-1.border-black.text-center
+              include ../components/social.pug
+      .copyright
+        .copyright-text
+          small Copyright © 2026 | Todos os direitos reservados <a class="link link-vz" href="https://www.atingirpsicofono.com.br" title="Atingir">https://www.atingirpsicofono.com.br</a>
+        .copyright-text
+          small Developed by <a class="link link-vz" href="https://github.com/viruzvz" target="_blank" title="Link desenvolvedor">Carlos_vz</a>
+      .wrapper
+        header.header-cookie
+          h2 Consentimento de Cookies
+          .data
+            p
+              | Este site usa cookies para ajudar você a ter uma experiência de navegação superior e mais relevante no site.
+        .buttons
+          button#acceptBtn.button.btn.btn-success.rounded-0 Aceitar
+          button#declineBtn.button.btn.btn-outline-secondary.rounded-0 Rejeitar
+      a.btn-whatsapp(
+        href="https://wa.me/5561982301562?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Atingir%20e%20quero%20agendar%20um%20hor%C3%A1rio."
+        target="_blank"
+        rel="noopener"
+        aria-label="Falar no WhatsApp"
+        title="Falar no WhatsApp"
+      )
+        i.fa-brands.fa-whatsapp
+        

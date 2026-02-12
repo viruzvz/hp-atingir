@@ -10,6 +10,18 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
+  p, ul, li, h1, h2, h3, span {
+    color: $t-primary !important;
+  }
+  li {
+    list-style: none;
+  }
+  h1, h2, ul, p {
+    margin-bottom: 15px;
+  }
+  h2 {
+    font-size: $t-xlarge;
+  }
 }
 .subtract {
   position: absolute;
@@ -20,5 +32,13 @@
   justify-content: center;
   img {
     margin-top: -30px;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .subtract {
+    display: none;
+  }
+  .hero {
+    padding-top: 30px;
   }
 }

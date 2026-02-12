@@ -1,0 +1,32 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  color: #1f6f54;
+  font-size: $t-xlarge;
+  font-weight: bold;
+  margin-bottom: 30px;
+  span {
+    padding: 0 16px;
+    white-space: nowrap;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #e2e2e2
+    );
+  }
+
+  &::after {
+    background: linear-gradient(
+      to left,
+      transparent,
+      #e2e2e2
+    );
+  }
+}

@@ -1,48 +1,130 @@
 .header {
-  position: relative;
-  z-index: 1;
-  .h-top {
-    background-color: $t-primary;
-    padding: 5px 15px;
-    color: #fff;
-    text-align: right;
-    font-size: $t-small;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #fff;
+
+  // sombra via animation (scroll)
+  transition: box-shadow .25s ease;
+  animation: shadowHeader linear both;
+  animation-timeline: scroll();
+  animation-range: 0 120px;
+
+  .navbar { padding: 0; }
+  .nav-link { padding: 15px 0; }
+
+  .navbar-toggler.custom-toggler {
+    border: 0;
+    background: transparent;
+    width: 42px;
+    height: 42px;
+    position: relative;
+    cursor: pointer;
+    transition: transform .3s ease;
+
+    &:focus { box-shadow: none; }
+
+    .bar {
+      display: block;
+      width: 26px;
+      height: 2px;
+      margin: 6px auto;
+      background: #000;
+      border-radius: 2px;
+      transform-origin: center;
+      transition: all .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    &:hover .bar { background: #111; }
+
+    &.active {
+      .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
   }
 }
+
 .nav-primary {
-  background-color: #fff;
-  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6);
-  // min-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
 
   .section {
     display: flex;
-    // justify-content: center;
-    // align-content: center;
     align-items: center;
-  }
-  // 40% (navbar)
-  .section--nav {
+    min-width: 0;
 
+    &--nav    { flex: 0 1 40%; }
+    &--logo   { flex: 0 1 20%; justify-content: center; }
+    &--social { flex: 0 1 40%; justify-content: flex-end; }
   }
 
-  // 20% (logo)
+  // logo central (some no scroll)
   .section--logo {
-    position: relative;
-    justify-content: center;
+    opacity: 1;
+    transition: opacity .25s ease;
+    animation: hide-logo linear both;
+    animation-timeline: scroll();
+    animation-range: 0 120px;
+
     .logo {
       position: absolute;
       top: 0;
-      // margin-top: -20px;
     }
   }
 
-  // 40% (redes)
-  .section--social {
-    justify-content: end;
+  // brand (aparece no scroll)
+  .navbar-brand {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-left: -165px;
+    transition: opacity .25s ease, visibility .25s ease;
+
+    animation: show-brand linear both;
+    animation-timeline: scroll();
+    animation-range: 0 120px;
   }
+}
 
+@keyframes show-brand {
+  to {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    margin-left: 0;
+  }
+}
 
+@keyframes hide-logo {
+  to { opacity: 0; }
+}
+
+@keyframes shadowHeader {
+  to { box-shadow: 0 8px 20px rgba(0, 0, 0, .08); }
+}
+
+@include media-breakpoint-down(lg) {
+  .nav-primary {
+    .navbar { width: 100%; }
+
+    // no mobile: brand sempre visível e some logo/social
+    .navbar-brand {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      margin-left: 0;
+      animation: none;
+    }
+
+    .section--nav { flex: 0 0 100%; }
+    .section--logo,
+    .section--social { display: none; }
+  }
 }

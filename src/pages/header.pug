@@ -1,20 +1,18 @@
+.h-top.d-none.d-lg-block
+  .container
+    .col-12
+      i.fa-regular.fa-clock &nbsp;
+      | SEG A SEX DE 07H ÁS 19H - SÁB 09H ÁS 17H
 header.header
-  .h-top
-    .container
-      .col-12
-        i.fa-regular.fa-clock &nbsp;
-        | SEG A SEX DE 07H ÁS 19H - SÁB 09H ÁS 17H
   .nav-primary
     .container
-      .row
-        .col-md-5.section.section--nav
-          include ../components/nav.pug
-        .col-md-2.section.section--logo
-          a.logo(href="#" title="Atingir Sociologia e Fonologia")
-            img(src="src/assets/logo-primary.svg" alt="Logo Atingir")
-        .col-md-5.section.section--social
-          a.tel(href="#" title="Whatsapp" target="_blank")
-            i.fa-brands.fa-whatsapp &nbsp;
-            | (61) 98230-1562
-          a.social(href="#" title="Instagram" target="_blank")
-            i.fa-brands.fa-instagram
+      .section.section--nav
+        include ../components/nav.pug
+      .section.section--logo
+        a.logo(href="#" title="Atingir Sociologia e Fonologia")
+          img(src="src/assets/logo-primary.svg" alt="Logo Atingir")
+      .section.section--social
+        a.link.link-primary.phone(href="#" title="Whatsapp" target="_blank")
+          i.fa-brands.fa-whatsapp &nbsp;
+          | (61) 98230-1562
+        include ../components/social.pug

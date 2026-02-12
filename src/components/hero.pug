@@ -1,37 +1,37 @@
 .hero
   .subtract
-    img(src="src/assets/subtract.png", alt="Bg logo")
+    img.lazyload(data-src="src/assets/subtract.png", alt="Bg logo")
   .container 
     .row 
-      .col-md-8
+      .col-lg-8.col-sm-12
         p
+          span.me-3
+            i.fa-solid.fa-circle-check.me-3
+            | Clínica ATINGIR 
           span
-            i.fa-brands.fa-whatsapp &nbsp;
-            | Clínica ATINGIR
-          span
-            i.fa-brands.fa-whatsapp &nbsp;
+            i.fa-solid.fa-heart.me-3
             | Psicologia . Psicomotricidade . Fonoaudiologia
         h1 Psicologia com acolhimento, ciência e propósito
         h2 Integramos psicomotricidade e fonoaudiologia como pilares de cuidado, potencializando comunicação, corpo, e emoção no dia a dia.
-        ul 
+        ul.list-group
           li 
-            i.fa-brands.fa-whatsapp &nbsp;
+            i.fa-solid.fa-circle-check.me-3
             | Psicomotricidade: corpo que organiza
           li 
-            i.fa-brands.fa-whatsapp &nbsp;
+            i.fa-solid.fa-circle-check.me-3
             | Fonoaudiologia: voz que se fortalece
           li 
-            i.fa-brands.fa-whatsapp &nbsp;
+            i.fa-solid.fa-circle-check.me-3
             | Psicologia: mente que encontra sentido
         p Atendimento humanizado . Sessões presenciais e/ou online . Plano Terapéutico individual.
-      .col-md-4
-        figure 
-          img(src="src/assets/hero-atingir-image.png", alt="Máscara da psicologia")
+      .col-lg-4.d-none.d-lg-block
+        figure.figure
+          img.figure-img.img-fluid.lazyload(src="src/assets/hero-atingir-image.png", alt="Máscara da psicologia")
     .row 
       .col-12.btn-contacts
         a.btn.btn-primary.me-3(href="#" title="Whatsapp")
-          i.fa-brands.fa-whatsapp &nbsp;
+          i.fa-brands.fa-whatsapp.me-3
           | Agendar avaliação
         a.btn.btn-secondary(href="#" title="Serviços")
-          i.fa-brands.fa-whatsapp &nbsp;
+          i.fa-solid.fa-circle-check.me-3
           | Ver serviços

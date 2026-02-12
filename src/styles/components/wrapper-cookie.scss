@@ -1,0 +1,67 @@
+$color_1: $t-primary;
+$color_2: #333;
+$color_3: #fff;
+$background-color_1: #034bf1;
+$background-color_2: #fff;
+$background-color_3: #4070f4;
+
+.wrapper {
+	position: fixed;
+	bottom: -300px;
+	right: 0;
+  left: 0;
+	width: 100%;
+	background: #fff;
+	border-radius: 0;
+	padding: 15px 10px;
+	transition: right 0.3s ease;
+	box-shadow: 0 -1px 5px 0 rgba(0,0,0,0.75);
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 991px) {
+    display: block;
+  }
+	.header-cookie {
+		display: flex;
+    flex-direction: column;
+		column-gap: 15px;
+	}
+	.data {
+		p {
+			color: $color_2;
+			font-size: 16px;
+		}
+	} 
+	.buttons {
+    width: 170px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.wrapper.show {
+	bottom: 0;
+}
+.header-cookie {
+	i {
+		color: $color_1;
+		font-size: 32px;
+	}
+	h2 {
+		color: $color_1;
+		font-weight: 500;
+    font-size: 22px;
+	}
+}
+.data {
+	p {
+		a {
+			color: $color_1;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
