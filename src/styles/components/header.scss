@@ -110,7 +110,7 @@
   to { box-shadow: 0 8px 20px rgba(0, 0, 0, .08); }
 }
 
-@include media-breakpoint-down(lg) {
+@media (max-width: 991.98px) {
   .nav-primary {
     .navbar { width: 100%; }
 

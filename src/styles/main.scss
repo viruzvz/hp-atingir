@@ -1,7 +1,4 @@
-@import "bootstrap";
-@import "fontawesome";
 @import "variables";
-@import "lazyframe";
 @import "components/header";
 @import "components/hero";
 @import "components/buttons";
@@ -143,7 +140,7 @@ p, span, h1, h2, h3, h4, h5 {
 
 .servicos {
   background-color: $section-warm;
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991.98px) {
     .col-sm-12 {
       margin-bottom: 15px;
       &:last-child {
@@ -185,7 +182,7 @@ p, span, h1, h2, h3, h4, h5 {
 .map     { background-color: $section-light; }
 .map {
   display: flex;
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991.98px) {
     flex-direction: column;
   }
 }

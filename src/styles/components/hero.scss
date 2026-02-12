@@ -34,7 +34,7 @@
     margin-top: -30px;
   }
 }
-@include media-breakpoint-down(lg) {
+@media (max-width: 991.98px) {
   .subtract {
     display: none;
   }
